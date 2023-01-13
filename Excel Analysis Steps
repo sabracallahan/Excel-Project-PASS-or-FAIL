@@ -33,3 +33,7 @@ Select entire sheet, Copy, + new sheet, Edit, Paste special, select Values
 Standard deviation =STDEV(C2:C200); Max =MAX(C2:C200); Min =MIN(C2:C200); Range =MAX(C2:C200)-MIN(C2:C200)
 
 Data was used to create Pivot Tables, Pivot Graphs and a Dashboard, see README for resulting Dashboard.
+
+Insight: From the Pivot Graphs You can see that you have the best chance of passing this class if you were born on a Wednesday, 
+are between the ages of 40 and 49 & you were chosen for either Section-1 or Section-7.
+
