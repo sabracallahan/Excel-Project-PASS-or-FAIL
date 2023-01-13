@@ -27,9 +27,10 @@ combine into unique ID: =L2&M2&N2&O2
 =IF(LEN(D2)>LEN(E2), "TRUE", "FALSE")
 15. Match first name letter with Nato-phonetic-alphabet (in another sheet) and display
 corresponding phonetic code word: =VLOOKUP(T2,'Nato-phonetic-alphabet'!$A$2:$B$27, 2, FALSE)
-16. Duplicated sheet with values only to protect the formulas for statistical evaluation: 
+16. Find percentile rank of each student based on their scores: =PERCENTRANK($C$2:$C$200, C2)
+17. Duplicated sheet with values only (to protect the formulas) for statistical evaluation: 
 Select entire sheet, Copy, + new sheet, Edit, Paste special, select Values
-17. Statistical analysis: Average =ROUND(AVERAGE(C2:C200),1); Median =MEDIAN(C2:C200); Mode =MODE(c2:C200);
+18. Statistical analysis: Average =ROUND(AVERAGE(C2:C200),1); Median =MEDIAN(C2:C200); Mode =MODE(c2:C200);
 Standard deviation =STDEV(C2:C200); Max =MAX(C2:C200); Min =MIN(C2:C200); Range =MAX(C2:C200)-MIN(C2:C200)
 
 Data was used to create Pivot Tables, Pivot Graphs and a Dashboard, see README for resulting Dashboard.
