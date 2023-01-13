@@ -20,7 +20,7 @@ The following are the steps I took to prepare the data for analysis with Excel f
 and 3 digit random number: Multi part solution == 
 First 2 initials =LEFT(A2,2); last name =RIGHT(A2,LEN(A2)-SEARCH(" ",A2)));
 last 2 digits of birth year =RIGHT(YEAR(B2),2); random 3 digit id =RANDBETWEEN(100,900); 
-combining all new parts=L2&M2&N2&O2
+combine into unique ID: =L2&M2&N2&O2
 12. Create email addresses with the unique identifier: =CONCAT(P2,"@DataWorkout.com")
 13. Find hypenated names, return True or False: =IF(ISNUMBER(SEARCH("-",A2)),"TRUE","FALSE")
 14. Find whether a students first name is longer than nme, retunr T/F:
@@ -32,4 +32,4 @@ Select entire sheet, Copy, + new sheet, Edit, Paste special, select Values
 17. Statistical analysis: Average =ROUND(AVERAGE(C2:C200),1); Median =MEDIAN(C2:C200); Mode =MODE(c2:C200);
 Standard deviation =STDEV(C2:C200); Max =MAX(C2:C200); Min =MIN(C2:C200); Range =MAX(C2:C200)-MIN(C2:C200)
 
-Data was used to create Pivot Tables, Pivot Graphs and a Dashboard.
+Data was used to create Pivot Tables, Pivot Graphs and a Dashboard, see README for resulting Dashboard.
