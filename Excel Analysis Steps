@@ -22,8 +22,8 @@ First 2 initials =LEFT(A2,2); last name =RIGHT(A2,LEN(A2)-SEARCH(" ",A2)));
 last 2 digits of birth year =RIGHT(YEAR(B2),2); random 3 digit id =RANDBETWEEN(100,900); 
 combine into unique ID: =L2&M2&N2&O2
 12. Create email addresses with the unique identifier: =CONCAT(P2,"@DataWorkout.com")
-13. Find hypenated names, return True or False: =IF(ISNUMBER(SEARCH("-",A2)),"TRUE","FALSE")
-14. Find whether a students first name is longer than nme, retunr T/F:
+13. Find hyphenated names, return True or False: =IF(ISNUMBER(SEARCH("-",A2)),"TRUE","FALSE")
+14. Find whether a students first name is longer than last name, return T/F:
 =IF(LEN(D2)>LEN(E2), "TRUE", "FALSE")
 15. Match first name letter with Nato-phonetic-alphabet (in another sheet) and display
 corresponding phonetic code word: =VLOOKUP(T2,'Nato-phonetic-alphabet'!$A$2:$B$27, 2, FALSE)
