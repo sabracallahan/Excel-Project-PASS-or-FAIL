@@ -3,29 +3,33 @@ Data Source: https://docs.google.com/spreadsheets/d/1zqEy1RgVx1QUh8qkYX0mwiIR8_W
 
 The following are the steps I took to prepare the data for analysis with Excel functions/formulas:
 
-1. Duplicate raw data into new sheet: *Home, Format, Move or Copy Sheet*
-2. Find and remove any duplicate data: *Data, Remove Duplicates*
-3. Check for missing data: *Home, Find & Select, Go To Special, select Blanks*
-4. Split Name into first & last name: *Data, Text to Columns*
-5. Extract year from date of birth (DOB): *=YEAR(B2)*
-6. Extract day of the week from DOB: *=TEXT(B2,"dddd")*
-7. Find age using 1/1/2022 for calculations: *=DATEDIF(B2,("1/1/2022"),"y")*
-8. Convert score into a letter grade: *=IFS(C2>=91,"A",C2>=81,"B",C2>=71,"C",C2>=61,"D",C2<=60,"F")*
-9. Assign pass or fail with C or above average: *=IF(I2="A","PASS",IF(I2="B","PASS",IF(I2="C","PASS","FAIL")))*
-10. Create 7 sections and randomly assign students: *=CHOOSE(RANDBETWEEN(1,7),"Section-1","Section-2","Section-3",
-"Section-4", "Section-5", "Section-6", "Section-7")*
-11. Create a unique ID first 2 intitials of first name, last name, last 2 digits of birth year and 3 digit 
-random number: *Multi part solution == First 2 initials =LEFT(A2,2); last name =RIGHT(A2,LEN(A2)-SEARCH(" ",A2)));
-last 2 digits of birth year =RIGHT(YEAR(B2),2); random 3 digit id =RANDBETWEEN(100,900); combining all new parts
-=L2&M2&N2&O2*
-12. Create email addresses with the unique identifier: *=CONCAT(P2,"@DataWorkout.com")
-13. Find hypenated names, return True or False: *=IF(ISNUMBER(SEARCH("-",A2)),"TRUE","FALSE")*
-14. Find whether a students first name is longer than nme, retunr T/F:*=IF(LEN(D2)>LEN(E2), "TRUE", "FALSE")*
-15. Match first name letter with Nato-phonetic-alphabet (in another sheet) and display corresponding phonetic 
-code word: *=VLOOKUP(T2,'Nato-phonetic-alphabet'!$A$2:$B$27, 2, FALSE)*
-16. Duplicated sheet with values only to protect the formulas for statistical evaluation: *Select entire sheet, 
-Copy, + new sheet, Edit, Paste special, select Values*
-17. Statistical analysis: Average *=ROUND(AVERAGE(C2:C200),1)*; Median *=MEDIAN(C2:C200)*; Mode *=MODE(c2:C200)*;
-Standard deviation *=STDEV(C2:C200)*; Max *=MAX(C2:C200)*; Min *=MIN(C2:C200)*; Range *=MAX(C2:C200)-MIN(C2:C200)
+1. Duplicate raw data into new sheet: Home, Format, Move or Copy Sheet
+2. Find and remove any duplicate data: Data, Remove Duplicates
+3. Check for missing data: Home, Find & Select, Go To Special, select Blanks
+4. Split Name into first & last name: Data, Text to Columns
+5. Extract year from date of birth (DOB): =YEAR(B2)
+6. Extract day of the week from DOB: =TEXT(B2,"dddd")
+7. Find age using 1/1/2022 for calculations: =DATEDIF(B2,("1/1/2022"),"y")
+8. Convert score into a letter grade: =IFS(C2>=91,"A",C2>=81,"B",C2>=71,"C",C2>=61,"D",C2<=60,"F")
+9. Assign pass or fail with C or above average: 
+=IF(I2="A","PASS",IF(I2="B","PASS",IF(I2="C","PASS","FAIL")))
+10. Create 7 sections and randomly assign students: 
+=CHOOSE(RANDBETWEEN(1,7),"Section-1","Section-2","Section-3",
+"Section-4", "Section-5", "Section-6", "Section-7")
+11. Create a unique ID first 2 intitials of first name, last name, last 2 digits of birth year 
+and 3 digit random number: Multi part solution == 
+First 2 initials =LEFT(A2,2); last name =RIGHT(A2,LEN(A2)-SEARCH(" ",A2)));
+last 2 digits of birth year =RIGHT(YEAR(B2),2); random 3 digit id =RANDBETWEEN(100,900); 
+combining all new parts=L2&M2&N2&O2
+12. Create email addresses with the unique identifier: =CONCAT(P2,"@DataWorkout.com")
+13. Find hypenated names, return True or False: =IF(ISNUMBER(SEARCH("-",A2)),"TRUE","FALSE")
+14. Find whether a students first name is longer than nme, retunr T/F:
+=IF(LEN(D2)>LEN(E2), "TRUE", "FALSE")
+15. Match first name letter with Nato-phonetic-alphabet (in another sheet) and display
+corresponding phonetic code word: =VLOOKUP(T2,'Nato-phonetic-alphabet'!$A$2:$B$27, 2, FALSE)
+16. Duplicated sheet with values only to protect the formulas for statistical evaluation: 
+Select entire sheet, Copy, + new sheet, Edit, Paste special, select Values
+17. Statistical analysis: Average =ROUND(AVERAGE(C2:C200),1); Median =MEDIAN(C2:C200); Mode =MODE(c2:C200);
+Standard deviation =STDEV(C2:C200); Max =MAX(C2:C200); Min =MIN(C2:C200); Range =MAX(C2:C200)-MIN(C2:C200)
 
 Data was used to create Pivot Tables, Pivot Graphs and a Dashboard.
